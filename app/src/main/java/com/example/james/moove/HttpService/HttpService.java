@@ -1,6 +1,5 @@
 package com.example.james.moove.HttpService;
 
-import android.util.Log;
 
 import com.example.james.moove.Constants.Constants;
 
@@ -11,10 +10,6 @@ import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
-/**
- * Created by james on 4/5/17.
- */
 
 public class HttpService {
     public  String getMovie(String movie) throws IOException {
