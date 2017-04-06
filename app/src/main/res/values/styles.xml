@@ -25,11 +25,13 @@
         <item name="tabSelectedTextColor">@color/colorAccent</item>
         <item name="tabIndicatorColor">@color/colorAccent</item>
         <item name="tabTextAppearance">@style/TabTexts</item>
+        <item name="tabGravity">fill</item>
     </style>
     <style name="NavigationTabsTv" parent="Widget.Design.TabLayout">
         <item name="tabSelectedTextColor">@color/colorSecondaryAccent</item>
         <item name="tabIndicatorColor">@color/colorSecondaryAccent</item>
         <item name="tabTextAppearance">@style/TabTexts</item>
+        <item name="tabGravity">fill</item>
     </style>
     
     
