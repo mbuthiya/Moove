@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.james.moove.authentication.LogInActivity"
+    android:background="@drawable/bgposter">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/invisible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/splash"
+                android:layout_marginTop="80dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:textColor="@color/colorSecondaryAccent"
+                android:paddingStart="30dp"
+                android:layout_marginTop="40dp"
+                android:textSize="18sp"
+                android:paddingEnd="30dp"/>
+            <EditText
+                android:id="@+id/ed_loginEmail"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:theme="@style/MyEditText"
+                style="@style/authTextFiles"
+                android:inputType="textEmailAddress"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password:"
+                android:textColor="@color/colorSecondaryAccent"
+                android:paddingStart="30dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:paddingEnd="30dp"/>
+            <EditText
+                android:id="@+id/ed_loginPassword"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:theme="@style/MyEditText"
+                style="@style/authTextFiles"
+                android:inputType="textPassword"
+                />
+            <Button
+                android:id="@+id/btn_loginBtn"
+                android:layout_width="190dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:background="@color/colorSecondaryAccent"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center_horizontal"
+                android:padding="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't have an account?"
+                    android:textAlignment="textEnd"
+                    style="@style/authTextFilesSmall"
+                   />
+                <TextView
+                    android:id="@+id/tv_goToSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign up here"
+                    style="@style/authTextFilesLinks"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:clickable="true"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</FrameLayout>
