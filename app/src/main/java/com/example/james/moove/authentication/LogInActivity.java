@@ -39,7 +39,6 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
         ButterKnife.bind(this);
-        createDialog();
         mGoToSignUpTextView.setOnClickListener(this);
         mLoginButton.setOnClickListener(this);
         mAuth=FirebaseAuth.getInstance();
@@ -58,6 +57,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void loginWithPassword() {
+        createDialog();
         String email=mLoginEmail.getText().toString().trim();
         String password=mLoginPassword.getText().toString().trim();
 
