@@ -54,7 +54,7 @@ public class NowPlaying extends Fragment {
         super.onCreate(savedInstanceState);
         httpService=new HttpService();
         processResults=new ProcessResults();
-        gridLayoutManager=new GridLayoutManager(getContext(),2);
+
         GetNowPlaying getNowPlaying=new GetNowPlaying();
         getNowPlaying.execute(NOW_PLAYING);
     }
@@ -77,6 +77,7 @@ public class NowPlaying extends Fragment {
             movies=processResults.movieResults(s);
             tvMoviePageAdapter=new TvMoviePageAdapter(getContext(),movies);
             mNowPlayingRecycler.setAdapter(tvMoviePageAdapter);
+            gridLayoutManager=new GridLayoutManager(getContext(),2);
             mNowPlayingRecycler.setLayoutManager(gridLayoutManager);
 
 

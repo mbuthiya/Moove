@@ -16,9 +16,6 @@
 
         </activity>
         <activity android:name=".authentication.LogInActivity"
-            android:theme="@style/NoActionBar"/>
-
-        <activity android:name=".authentication.SignInActivity"
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".authentication.SignInActivity"
+            android:theme="@style/NoActionBar"/>
     </application>
 
 </manifest>
