@@ -21,8 +21,10 @@ public class ProcessResults {
                 JSONObject movieJson=moviesJsonArray.getJSONObject(i);
                 String title=movieJson.getString("title");
                 String ratings=movieJson.getString("vote_average");
+                
                 String imageUrl=movieJson.getString("poster_path");
                 String overview=movieJson.getString("overview");
+
                 if(title !=null && ratings  !=null && imageUrl !=null && overview !=null){
                     String imgurl= Constants.MOVIE_POSTER_BASE_URL+imageUrl;
                     Movie movie=new Movie(title,ratings,imgurl,overview);
