@@ -17,7 +17,7 @@
         android:id="@+id/vp_movies_tabs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="70dp"
+        android:paddingTop="90dp"
         android:paddingBottom="60dp"
 
        />

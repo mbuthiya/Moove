@@ -71,6 +71,10 @@ public class TvActivity extends AppCompatActivity implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
+        if(v==mMovieButton){
+            intent=new Intent(TvActivity.this,MainActivity.class);
+            startActivity(intent);
+        }
 
     }
 }

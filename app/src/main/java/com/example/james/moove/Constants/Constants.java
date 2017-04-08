@@ -19,6 +19,6 @@ public class Constants {
 
     //on_the_air,popular,airing_today
 
-    public static  final String TV_BASE_URL="https://api.themoviedb.org/3/tv";
+    public static  final String TV_BASE_URL="https://api.themoviedb.org/3/tv/";
     public  static  final String TV_SEARCH_BASE_URL="https://api.themoviedb.org/3/search/tv";
 }
