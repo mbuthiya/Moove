@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.james.moove.details.TVdetailsFragment"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+
+                    android:id="@+id/iv_tvImageDetails"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:padding="5dp"
+                    android:id="@+id/tv_tvName"
+                    android:layout_marginTop="260dp"
+                    android:textSize="22sp"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    style="@style/invisible"
+                    android:layout_gravity="bottom"
+                    />
+            </FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewEnd"
+                android:id="@+id/tv_tvrating"
+                android:textColor="@color/colorSecondaryAccent"
+                android:paddingEnd="25dp"
+                android:paddingStart="25dp"
+                android:textSize="35sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Synopsis:"
+                    android:textSize="18sp"
+                    android:layout_marginStart="20dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tv_tvoverview"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="21sp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

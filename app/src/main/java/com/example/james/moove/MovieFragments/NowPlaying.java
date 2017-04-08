@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.james.moove.Adapters.TvMoviePageAdapter;
 import com.example.james.moove.HttpService.HttpService;
@@ -26,6 +27,8 @@ import butterknife.ButterKnife;
 
 public class NowPlaying extends Fragment {
     @Bind(R.id.rv_nowPlaying)RecyclerView mNowPlayingRecycler;
+
+
     private TvMoviePageAdapter tvMoviePageAdapter;
     private GridLayoutManager gridLayoutManager;
     public static  final  String NOW_PLAYING="now_playing";
@@ -46,6 +49,7 @@ public class NowPlaying extends Fragment {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_now_playing, container, false);
         ButterKnife.bind(this,view);
+
         return view;
     }
 
@@ -59,6 +63,7 @@ public class NowPlaying extends Fragment {
         getNowPlaying.execute(NOW_PLAYING);
     }
     public  class GetNowPlaying extends AsyncTask<String,Void,String>{
+
 
         @Override
         protected String doInBackground(String... params) {
@@ -74,11 +79,13 @@ public class NowPlaying extends Fragment {
 
         @Override
         protected void onPostExecute(String s) {
+
             movies=processResults.movieResults(s);
             tvMoviePageAdapter=new TvMoviePageAdapter(getContext(),movies);
             mNowPlayingRecycler.setAdapter(tvMoviePageAdapter);
             gridLayoutManager=new GridLayoutManager(getContext(),2);
             mNowPlayingRecycler.setLayoutManager(gridLayoutManager);
+
 
 
         }

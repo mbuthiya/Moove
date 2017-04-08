@@ -2,6 +2,7 @@ package com.example.james.moove.Adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.ImageView;
 
 import com.example.james.moove.Model.TV;
 import com.example.james.moove.R;
+import com.example.james.moove.details.TVDetails;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -46,17 +50,27 @@ public class TvAdapter extends RecyclerView.Adapter<TvAdapter.TVRecycler> {
         return tvs.size();
     }
 
-    public class TVRecycler extends RecyclerView.ViewHolder {
+    public class TVRecycler extends RecyclerView.ViewHolder  implements  View.OnClickListener{
         @Bind(R.id.iv_singleItemTv)ImageView mTvImageView;
 
         public TVRecycler(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
             context=itemView.getContext();
+            itemView.setOnClickListener(this);
         }
 
         public void bind(TV tv) {
             Picasso.with(context).load(tv.getmImageUrl()).into(mTvImageView);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position=getLayoutPosition();
+            Intent intent=new Intent(context, TVDetails.class);
+            intent.putExtra("itemPosition",position);
+            intent.putExtra("tv", Parcels.wrap(tvs));
+            context.startActivity(intent);
         }
     }
 }

@@ -26,13 +26,12 @@
             android:name=".authentication.SignInActivity"
             android:theme="@style/NoActionBar" />
         <activity
-
             android:name=".details.MovieDetails"
-            android:theme="@style/NoActionBar"
-           />
-
-        <activity android:name=".TvActivity"
-            android:theme="@style/NoActionBar"/>
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".TvActivity"
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".details.TVDetails"></activity>
     </application>
 
 </manifest>

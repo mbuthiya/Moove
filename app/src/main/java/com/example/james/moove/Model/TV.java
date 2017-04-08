@@ -1,7 +1,9 @@
 package com.example.james.moove.Model;
 
 
+import org.parceler.Parcel;
 
+@Parcel
 public class TV {
     private String mTVTitle;
     private String mRating;
