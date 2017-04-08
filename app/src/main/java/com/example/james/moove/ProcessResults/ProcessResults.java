@@ -3,6 +3,7 @@ package com.example.james.moove.ProcessResults;
 
 import com.example.james.moove.Constants.Constants;
 import com.example.james.moove.Model.Movie;
+import com.example.james.moove.Model.TV;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,4 +42,32 @@ public class ProcessResults {
         return movies;
 
     }
+    public ArrayList<TV> tvResults(String jsonString){
+        ArrayList<TV> tvs=new ArrayList<>();
+
+        try{
+            JSONObject tvsJson=new JSONObject(jsonString);
+            JSONArray tvsJsonArray=tvsJson.getJSONArray("results");
+            for(int i=0;i<tvsJsonArray.length();i++){
+                JSONObject tvJson=tvsJsonArray.getJSONObject(i);
+                String title=tvJson.getString("name");
+                String ratings=tvJson.getString("vote_average");
+
+                String imageUrl=tvJson.getString("poster_path");
+                String overview=tvJson.getString("overview");
+
+                if(title !=null && ratings  !=null && imageUrl !=null && overview !=null){
+                    String imgurl= Constants.MOVIE_POSTER_BASE_URL+imageUrl;
+                    TV tv=new TV(title,ratings,imgurl,overview);
+                    tvs.add(tv);
+                }
+
+            }
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+        return tvs;
+
+    }
+
 }
