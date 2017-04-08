@@ -2,6 +2,7 @@ package com.example.james.moove.Adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.ImageView;
 
 import com.example.james.moove.Model.Movie;
 import com.example.james.moove.R;
+import com.example.james.moove.details.MovieDetails;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -43,16 +47,28 @@ public class TvMoviePageAdapter extends RecyclerView.Adapter<TvMoviePageAdapter.
         return movies.size();
     }
 
-    public class TvMovie extends RecyclerView.ViewHolder {
+    public class TvMovie extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.iv_singleItemIv) ImageView mSingleItemIv;
         public TvMovie(View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
             context=itemView.getContext();
+            itemView.setOnClickListener(this);
         }
 
         public void bind(Movie movie) {
             Picasso.with(context).load(movie.getmImageUrl()).into(mSingleItemIv);
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            int itemPosition=getLayoutPosition();
+            Intent intent=new Intent(context, MovieDetails.class);
+            intent.putExtra("position",itemPosition);
+            intent.putExtra("movies", Parcels.wrap(movies));
+            context.startActivity(intent);
+
 
         }
     }

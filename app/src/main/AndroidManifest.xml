@@ -12,7 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".authentication.LogInActivity"
             android:theme="@style/NoActionBar">
@@ -25,7 +25,7 @@
         <activity
             android:name=".authentication.SignInActivity"
             android:theme="@style/NoActionBar" />
-        <activity android:name=".details.MovieDetails"></activity>
+        <activity android:name=".details.MovieDetails" android:theme="@style/NoActionBar"/>
     </application>
 
 </manifest>

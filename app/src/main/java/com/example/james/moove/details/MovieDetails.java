@@ -1,25 +1,39 @@
 package com.example.james.moove.details;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.example.james.moove.Model.Movie;
 import com.example.james.moove.R;
 
-import butterknife.Bind;
+
+import org.parceler.Parcels;
+
+import java.util.ArrayList;
+
 import butterknife.ButterKnife;
 
 public class MovieDetails extends AppCompatActivity {
-    @Bind(R.id.iv_movieImageDetails)ImageView mMovieDetailsImageView;
-    @Bind(R.id.tv_movieName)TextView mMovieName;
-    @Bind(R.id.tv_overview)TextView mOverView;
-    @Bind(R.id.tv_rating)TextView mRating;
+    private Movie movie;
+    private int position;
+    private ArrayList<Movie> movies;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
-        ButterKnife.bind(this);
+
+        movies= Parcels.unwrap(getIntent().getParcelableExtra("movies"));
+        position=getIntent().getIntExtra("position",0);
+
+        movie=movies.get(position);
+
+        FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
+        MovieDetailsFragment detailsFragment=MovieDetailsFragment.newInstance(movie);
+        ft.replace(R.id.movieDetailsPLaceHolder,detailsFragment);
+        ft.commit();
+
     }
 }

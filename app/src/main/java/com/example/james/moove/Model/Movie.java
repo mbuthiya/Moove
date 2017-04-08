@@ -1,12 +1,15 @@
 package com.example.james.moove.Model;
 
 
+import org.parceler.Parcel;
 
+@Parcel
 public class Movie {
     private String mMovieTitle;
     private String mRating;
     private String mImageUrl;
     private String mOverview;
+
     public Movie(){}
 
     public Movie(String title, String rating,String imageUrl,String mOverview){
