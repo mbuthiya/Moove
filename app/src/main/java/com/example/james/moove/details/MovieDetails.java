@@ -1,11 +1,14 @@
 package com.example.james.moove.details;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.james.moove.Model.Movie;
 import com.example.james.moove.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 import org.parceler.Parcels;
@@ -20,6 +23,7 @@ public class MovieDetails extends AppCompatActivity {
     private ArrayList<Movie> movies;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +34,13 @@ public class MovieDetails extends AppCompatActivity {
 
         movie=movies.get(position);
 
+
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         MovieDetailsFragment detailsFragment=MovieDetailsFragment.newInstance(movie);
         ft.replace(R.id.movieDetailsPLaceHolder,detailsFragment);
         ft.commit();
 
     }
+
+
 }

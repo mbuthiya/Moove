@@ -21,4 +21,9 @@ public class Constants {
 
     public static  final String TV_BASE_URL="https://api.themoviedb.org/3/tv/";
     public  static  final String TV_SEARCH_BASE_URL="https://api.themoviedb.org/3/search/tv";
+
+    //firebase constants.
+    public static  final String USERS="users";
+    public static  final String WATCHLIST="watchlist";
+
 }
