@@ -10,12 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.james.moove.Adapters.TvAdapter;
 import com.example.james.moove.HttpService.HttpService;
 import com.example.james.moove.Model.TV;
 import com.example.james.moove.ProcessResults.ProcessResults;
 import com.example.james.moove.R;
+import com.example.james.moove.connection.Connection;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,8 +54,13 @@ public class PopularTV extends Fragment {
         super.onCreate(savedInstanceState);
         httpService=new HttpService();
         processResults=new ProcessResults();
-        GetPopularTv popularTv=new GetPopularTv();
-        popularTv.execute(POPULARTV);
+        if(Connection.isConnected(getContext())){
+            GetPopularTv popularTv=new GetPopularTv();
+            popularTv.execute(POPULARTV);
+        }else {
+            Toast.makeText(getContext(), "NO INTERNET", Toast.LENGTH_SHORT).show();
+        }
+
 
     }
     public  class  GetPopularTv extends AsyncTask<String,Void,String>{

@@ -11,12 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.james.moove.Adapters.TvMoviePageAdapter;
 import com.example.james.moove.HttpService.HttpService;
 import com.example.james.moove.Model.Movie;
 import com.example.james.moove.ProcessResults.ProcessResults;
 import com.example.james.moove.R;
+import com.example.james.moove.connection.Connection;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,9 +60,13 @@ public class NowPlaying extends Fragment {
         super.onCreate(savedInstanceState);
         httpService=new HttpService();
         processResults=new ProcessResults();
+        if(Connection.isConnected(getContext())){
+            GetNowPlaying getNowPlaying=new GetNowPlaying();
+            getNowPlaying.execute(NOW_PLAYING);
+        }else {
+            Toast.makeText(getContext(), "NO INTERNET", Toast.LENGTH_SHORT).show();
+        }
 
-        GetNowPlaying getNowPlaying=new GetNowPlaying();
-        getNowPlaying.execute(NOW_PLAYING);
     }
     public  class GetNowPlaying extends AsyncTask<String,Void,String>{
 

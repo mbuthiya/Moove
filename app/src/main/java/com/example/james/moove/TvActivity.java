@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.james.moove.Adapters.FragmentsStateAdapter;
-import com.example.james.moove.MovieFragments.Upcoming;
 import com.example.james.moove.tvFragments.AiringToday;
 import com.example.james.moove.tvFragments.OnAir;
 import com.example.james.moove.tvFragments.PopularTV;

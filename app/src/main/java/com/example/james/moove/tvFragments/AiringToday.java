@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.james.moove.Adapters.TvAdapter;
 import com.example.james.moove.Adapters.TvMoviePageAdapter;
@@ -17,6 +18,7 @@ import com.example.james.moove.HttpService.HttpService;
 import com.example.james.moove.Model.TV;
 import com.example.james.moove.ProcessResults.ProcessResults;
 import com.example.james.moove.R;
+import com.example.james.moove.connection.Connection;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,8 +56,13 @@ public class AiringToday extends Fragment {
         super.onCreate(savedInstanceState);
         httpService=new HttpService();
         processResults=new ProcessResults();
-        GetAiringToday airingToday=new GetAiringToday();
-        airingToday.execute(AIRING_TODAY);
+        if(Connection.isConnected(getContext())){
+            GetAiringToday airingToday=new GetAiringToday();
+            airingToday.execute(AIRING_TODAY);
+        }else {
+            Toast.makeText(getContext(), "NO INTERNET", Toast.LENGTH_SHORT).show();
+        }
+
 
     }
     public class GetAiringToday extends AsyncTask<String,Void,String>{
