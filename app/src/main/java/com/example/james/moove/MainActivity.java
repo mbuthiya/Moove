@@ -78,6 +78,9 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         if (v==mTvButton){
             intent=new Intent(MainActivity.this,TvActivity.class);
             startActivity(intent);
+        }else if (v==mWatchlistButton){
+            intent=new Intent(MainActivity.this,Watchlist.class);
+            startActivity(intent);
         }
     }
 }

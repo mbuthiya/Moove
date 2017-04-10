@@ -27,40 +27,48 @@
         <item name="tabTextAppearance">@style/TabTexts</item>
         <item name="tabGravity">fill</item>
     </style>
+
     <style name="NavigationTabsTv" parent="Widget.Design.TabLayout">
         <item name="tabSelectedTextColor">@color/colorSecondaryAccent</item>
         <item name="tabIndicatorColor">@color/colorSecondaryAccent</item>
         <item name="tabTextAppearance">@style/TabTexts</item>
         <item name="tabGravity">fill</item>
     </style>
-    
-    
+
+
     <style name="TabTexts" parent="TextAppearance.Design.Tab">
         <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">14sp</item>
-        
+
     </style>
-    
-  <style name="NoActionBar" parent="AppTheme.NoActionBar">
-      
-  </style>
+
+    <style name="NoActionBar" parent="AppTheme.NoActionBar">
+
+    </style>
     <!-- auth Edit text styles-->
     <style name="MyEditText" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">@color/colorAccent</item>
         <item name="colorControlActivated">@color/colorSecondaryAccent</item>
     </style>
+
     <style name="authTextFiles">
         <item name="android:textSize">22sp</item>
         <item name="android:textColor">#ffffff</item>
     </style>
+
     <style name="authTextFilesLinks">
         <item name="android:textColor">@color/colorSecondaryAccent</item>
         <item name="android:textSize">14sp</item>
     </style>
+
     <style name="authTextFilesSmall">
         <item name="android:textColor">#ffffff</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
