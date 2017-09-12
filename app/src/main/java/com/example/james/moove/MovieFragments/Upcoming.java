@@ -55,12 +55,10 @@ public class Upcoming extends Fragment {
         super.onCreate(savedInstanceState);
         httpService=new HttpService();
         processResults=new ProcessResults();
-        if(Connection.isConnected(getContext())){
+
             GetUpcoming upcoming=new GetUpcoming();
             upcoming.execute(UPCOMING);
-        }else {
-            Toast.makeText(getContext(), "NO INTERNET", Toast.LENGTH_SHORT).show();
-        }
+
 
     }
     class GetUpcoming extends AsyncTask<String,Void,String>{

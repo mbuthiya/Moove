@@ -60,12 +60,10 @@ public class NowPlaying extends Fragment {
         super.onCreate(savedInstanceState);
         httpService=new HttpService();
         processResults=new ProcessResults();
-        if(Connection.isConnected(getContext())){
+
             GetNowPlaying getNowPlaying=new GetNowPlaying();
             getNowPlaying.execute(NOW_PLAYING);
-        }else {
-            Toast.makeText(getContext(), "NO INTERNET", Toast.LENGTH_SHORT).show();
-        }
+
 
     }
     public  class GetNowPlaying extends AsyncTask<String,Void,String>{

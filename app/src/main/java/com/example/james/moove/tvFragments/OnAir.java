@@ -57,12 +57,10 @@ public class OnAir extends Fragment {
         super.onCreate(savedInstanceState);
         httpService=new HttpService();
         processResults=new ProcessResults();
-        if(Connection.isConnected(getContext())){
+
             GetOnAir  onAir =new  GetOnAir ();
             onAir.execute(ON_AIR);
-        }else {
-            Toast.makeText(getContext(), "NO INTERNET", Toast.LENGTH_SHORT).show();
-        }
+
 
     }
     public class GetOnAir extends AsyncTask<String,Void,String>{

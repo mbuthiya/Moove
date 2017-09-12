@@ -54,12 +54,10 @@ public class PopularTV extends Fragment {
         super.onCreate(savedInstanceState);
         httpService=new HttpService();
         processResults=new ProcessResults();
-        if(Connection.isConnected(getContext())){
+
             GetPopularTv popularTv=new GetPopularTv();
             popularTv.execute(POPULARTV);
-        }else {
-            Toast.makeText(getContext(), "NO INTERNET", Toast.LENGTH_SHORT).show();
-        }
+
 
 
     }
